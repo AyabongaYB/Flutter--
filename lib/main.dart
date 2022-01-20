@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() {
   runApp(HomeApp());
 }
 
-class HomeApp extends StatelessWidget {
-  var Qindex = 0;
+class HomeApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _HomeAppState();
+  }
+}
 
-  void answerQuestion() {
-    Qindex += 1;
+class _HomeAppState extends State<HomeApp> {
+  var _Qindex = 0;
+
+  void _answerQuestion() {
+    setState(() {
+      _Qindex += 1;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'お気に入り色何？',
-      'お気に入り色動物何？',
+      'お気に入りの色何？',
+      'お気に入りの動物何？',
+      'お気に入りの歌何ですか？',
     ];
 
     return MaterialApp(
@@ -25,9 +36,9 @@ class HomeApp extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text(questions[Qindex]),
-          ElevatedButton(child: Text('答え １'), onPressed: answerQuestion),
-          ElevatedButton(child: Text('答え ２'), onPressed: answerQuestion),
+          Question(questions[_Qindex]),
+          ElevatedButton(child: Text('答え １'), onPressed: _answerQuestion),
+          ElevatedButton(child: Text('答え ２'), onPressed: _answerQuestion),
           ElevatedButton(
               child: Text('答え ３'),
               onPressed: () => print('ANswer 3 chosen - anonymous method')),
