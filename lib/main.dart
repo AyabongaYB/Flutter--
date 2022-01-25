@@ -18,7 +18,7 @@ class _HomeAppState extends State<HomeApp> {
 
   void _answerQuestion() {
     setState(() {
-      _Qindex += 1;
+      _Qindex = 1;
     });
   }
 
@@ -38,9 +38,9 @@ class _HomeAppState extends State<HomeApp> {
       body: Column(
         children: [
           Question(questions[_Qindex]),
-          Answer(),
-          Answer(),
-          Answer(),
+          Answer(_answerQuestion),
+          Answer(_answerQuestion),
+          Answer(_answerQuestion),
         ],
       ),
     ));

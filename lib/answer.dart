@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
+  final Function functionPointer;
+
+  Answer(this.functionPointer);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,9 +18,3 @@ class Answer extends StatelessWidget {
     );
   }
 }
-
- //ElevatedButton(child: Text('答え ２'), onPressed: _answerQuestion),
- //         ElevatedButton(
- //             child: Text('答え ３'),
- //             onPressed: () => print('ANswer 3 chosen - anonymous method')),
-        
