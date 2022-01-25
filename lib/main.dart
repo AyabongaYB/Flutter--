@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(HomeApp());
@@ -37,11 +38,9 @@ class _HomeAppState extends State<HomeApp> {
       body: Column(
         children: [
           Question(questions[_Qindex]),
-          ElevatedButton(child: Text('答え １'), onPressed: _answerQuestion),
-          ElevatedButton(child: Text('答え ２'), onPressed: _answerQuestion),
-          ElevatedButton(
-              child: Text('答え ３'),
-              onPressed: () => print('ANswer 3 chosen - anonymous method')),
+          Answer(),
+          Answer(),
+          Answer(),
         ],
       ),
     ));
